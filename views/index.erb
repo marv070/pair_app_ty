@@ -1,0 +1,54 @@
+<! doctype HTML5>
+
+<html lang = "en">
+    <head>
+        <meta charset = "utf - 8">
+
+        <title> selected pairs </title>
+        <meta name = "description" content = "selected pairs">
+        <meta name = "author" content = "Site Point">
+
+        <link rel = "stylesheet" href = "css/style.css">
+    
+        <script>
+            function generate() {
+                var user_given_number = 1 //document.getElementById("name_button")
+                // 
+                for (var i = 1; i <= user_given_number; i++) {
+                   // i++ is the same as i = i + 1
+
+                    var input = document.createElement("input");
+                    // variable input is the boxes themselves
+
+                    input.text = "text";
+                    // .text tells the box what to expect to be written in
+
+                    input.name = "name[]";
+                    // gives a title to the value and the empty brackets push the values into an empty array
+
+                    input.required = true;
+                    // something has to be inside the boxes before submit button works
+
+                    input.placeholder = "Enter name"
+                    // places shadow text inside text boxes that goes away as soon as user types
+                    
+                    list_names.appendChild(input);
+                    // this puts the div of text boxes on the screen after the number button has been pressed
+                }
+            }
+        </script>
+    
+    </head>
+    
+    <body>
+        <div id = "random_names">
+            <form method = "post" action = "/user_given_names">
+                Enter how many people in your group
+                <input type = "button" id = "name_button" value = "Press for text box" onclick = "generate()"/>
+                <div id = "list_names"> </div>
+                <input type = "submit" value = "Shuffle!">
+            </form>
+        </div>
+    </body>
+
+</html>
