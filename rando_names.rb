@@ -6,5 +6,12 @@ def pairing(name)
       last_one = last_one[0]
       pairs[0] << last_one
     end
-    pairs.map! {|name1, name2, name3| "#{name1} " "#{name2} " "#{name3}"}.join" and "
+    team = ""
+    pairs.each do |value|
+      if value.include? (value[2])
+        teams << value[0] + "," + value[1] + "," + value[2] + "<br>"
+      else
+      teams << value[0] + "," + value[1] + "<br>"
+      end
+      teams
 end

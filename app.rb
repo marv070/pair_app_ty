@@ -6,10 +6,9 @@ get '/' do
 end
 
 post '/user_given_names' do
-    name = params[:text]
+    name = params[:name]
     pairs = params[:pairs]
     pairs = pairing(name)
-    p name
     erb :pairs_page, :locals => {:name => name, :pairs => pairs}
 end
 
