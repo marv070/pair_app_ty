@@ -6,12 +6,13 @@ def pairing(name)
       last_one = last_one[0]
       pairs[0] << last_one
     end
-    team = ""
+    teams = ""
     pairs.each do |value|
       if value.include? (value[2])
         teams << value[0] + "," + value[1] + "," + value[2] + "<br>"
       else
-      teams << value[0] + "," + value[1] + "<br>"
+        teams << value[0] + "," + value[1] + "<br>"
       end
+    end
       teams
 end
