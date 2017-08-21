@@ -10,17 +10,25 @@
 
         <link rel = "stylesheet" href = "css/style.css">
     <script>
-
+        function generateboxes(){
+            var x =document.createElement("INPUT");
+            x.setAttribute("type", "checkbox");
+            document.body.appendChild(x);
+        }
    
     </script>
     </head>
 
     <body>
+    
     <div id = "paired_names">
-       <form action = "/checkbox_page">
-            <input type = "checkbox" name = "namepairs" value = #{value} > <%= pairs %>
-            <br>
-            <input type = "submit">
-        </form> 
+        <% pairs.each do |pairs| %>
+        <form method = "post" action = "/pairs_page">
+       <p> <input type = "checkbox" name = "box_position[]" value = <%= pairs %> > <%= pairs %> </p>
+        <%end%>
+        <input type = "submit">
+        </form>
+    </div>
+
     </body>
 </html>
