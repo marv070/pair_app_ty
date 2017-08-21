@@ -9,26 +9,20 @@
         <meta name = "author" content = "Site Point">
 
         <link rel = "stylesheet" href = "css/style.css">
-    <script>
-        function generateboxes(){
-            var x =document.createElement("INPUT");
-            x.setAttribute("type", "checkbox");
-            document.body.appendChild(x);
-        }
    
-    </script>
     </head>
 
     <body>
     
     <div id = "paired_names">
-        <% pairs.each do |pairs| %>
+       <center><h1>Please pick pairs that work well together:</h1>
+        <%pairs.each do |pair|%>
         <form method = "post" action = "/pairs_page">
-       <p> <input type = "checkbox" name = "pairs[]" value = <%= pairs %> > <%= pairs %> </p>
+      <h3> <input type = "checkbox" name ="pairs[]" value ='<%=pair.join(' , ')%>' > <%=pair.join(' , ')%></h3> 
         <%end%>
         <input type = "submit">
         </form>
-    </div>
+    </div></center>
 
     </body>
 </html>
