@@ -24,7 +24,7 @@
     <div id = "paired_names">
         <% pairs.each do |pairs| %>
         <form method = "post" action = "/pairs_page">
-       <p> <input type = "checkbox" name = "box_position[]" value = <%= pairs %> > <%= pairs %> </p>
+       <p> <input type = "checkbox" name = "pairs[]" value = <%= pairs %> > <%= pairs %> </p>
         <%end%>
         <input type = "submit">
         </form>
